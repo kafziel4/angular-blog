@@ -1,4 +1,11 @@
-export const dataFake = [
+export type postData = {
+  id: string;
+  picture: string;
+  title: string;
+  description: string;
+};
+
+export const dataFake: postData[] = [
   {
     id: '1',
     picture:
@@ -11,7 +18,7 @@ export const dataFake = [
     picture:
       'https://cdn.thenewstack.io/media/2023/01/b97ec242-angular_vs_react.jpg',
     title: 'Angular vs React, comparação detalhada das ferramentas',
-    description: 'Comparação dos apesctos técnicos das ferramentas.',
+    description: 'Comparação dos aspectos técnicos das ferramentas.',
   },
   {
     id: '3',

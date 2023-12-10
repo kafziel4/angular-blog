@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuTitleComponent } from '../../components/menu-title/menu-title.component';
 import { BigCardComponent } from '../../components/big-card/big-card.component';
 import { SmallCardComponent } from '../../components/small-card/small-card.component';
+import { dataFake, postData } from '../../data/dataFake';
 
 @Component({
   selector: 'app-home',
@@ -10,4 +11,16 @@ import { SmallCardComponent } from '../../components/small-card/small-card.compo
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  bigPost?: postData;
+  smallPosts: postData[] = [];
+
+  ngOnInit(): void {
+    this.getNews();
+  }
+
+  getNews() {
+    this.bigPost = dataFake[0];
+    this.smallPosts = dataFake.slice(1);
+  }
+}
